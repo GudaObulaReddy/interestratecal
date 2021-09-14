@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <style>
+ h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+    </style>
+</head>
+<body bgcolor="blue">
+<div class="table-users">
+    {{result}}
+</div>
+<div class="table-users">
+    <h4>interest total</h4>
+    {{interesttotal}}
+</div>
+<div class="table-users">
+    <h4>Amount total</h4>
+    {{Amounttotal}}
+</div>
+<br>
+<br>
+<div>
+<form action="/re" method="POST">
+            <input type="submit" value="CalculateAnother">
+        </form>
+</div>
+</body>
+</html>
