@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>interest calculator</title>
+    <script src="static/sty.js">
+
+    </script>
     <style>
-table, footer {
+     table, footer {
        margin: 20px auto;
        text-align: right;
      }
@@ -21,22 +24,30 @@ label {
 <body bgcolor="blue" >
 <div class="content" >
     <h1>Interest Calculator</h1>
-    <div class="form">
-        <form action="/math" method="POST">
+    English:<input type="radio" name="fir" value="YES" onclick="language(0)">
+    Telugu:<input type="radio" name="fir" value="NO" onclick="language(1)"/>
+    <div class="form" id="english">
+        <form action="/math" method="POST" onsubmit="return validdeatils()">
             <label for="typeof" >choose a  simple  or compound</label>
             <br>
-<select id="typeof" name="typeof" style="width: 210px">
-    <option value="S">Simple</option>
-    <option value="C">Compound</option>
-</select>
+            <select id="typeof" name="typeof" style="width: 210px" onchange="text()">
+            <option value="N">Select</option>
+            <option value="S">Simple</option>
+            <option value="C">Compound</option>
+            </select>
             <br>
             <br>
-       <input type="text" name="Amount" id="Amount" placeholder="amount" style="width: 200px">
+       <input type="number" name="Amount" id="Amount" placeholder="amount" style="width: 200px" pattern="[">
             <br>
             <br>
-       <input type="text" name="months" id="months" placeholder="months" style="width: 200px">
+       <input type="number" name="yea" id="yea" placeholder="years" style="width: 60px" min="0">
+       <input type="number" name="month" id="month" placeholder="months" style="width: 60px" min="0" max="12">
+       <input type="number" name="days" id="days" placeholder="days" style="width: 60px" min="0" max="30">
             <br>
             <br>
+      <!-- <input type="text" name="months" id="months" placeholder="months" style="width: 200px">
+            <br>
+            <br>-->
        <input type="text" name="inter" id="inter" placeholder="interest" style="width: 200px">
             <br>
             <br>
@@ -48,15 +59,83 @@ label {
 </select>
             <br>
             <br>
+            <div id="mycode">
+              <label for="noofyears" >how many years </label>
+
+        <select id="noofyears" name="noofyears" style="width: 210px">
+            <option value=1>yearly</option>
+            <option value=2>2 years</option>
+            <option value=1>3 years</option>
+            <option value=2>4 years</option>
+            <option value=2>5 years</option>
+            <option value=2>6 years</option>
+            <option value=2>7 years</option>
+            <option value=2>8 years</option>
+            <option value=2>9 years</option>
+            <option value=2>10 years</option>
+        </select>
+                </div>
 
        <input type="submit" value="Calculate" >
         </form>
     </div>
+    <div class="form" id="telugu">
+        <form action="/math" method="POST" onsubmit="return validdeatils1()">
+            <label for="typeof" >బారు వడ్డి లేదా అంత కట్టు</label>
+            <br>
+            <select id="typeof1" name="typeof" style="width: 210px" onchange="text1()">
+            <option value="N">ఎంచుకోండి </option>
+            <option value="S">బారు వడ్డి</option>
+            <option value="C">అంత కట్టు</option>
+            </select>
+            <br>
+            <br>
+       <input type="number" name="Amount" id="Amount1" placeholder="అసలు" style="width: 200px">
+            <br>
+            <br>
+       <input type="number" name="yea" id="yea1" placeholder="సంవత్సరాలు" style="width: 60px" min="0">
+       <input type="number" name="month" id="month1" placeholder="నెలలు" style="width: 60px" min="0" max="12">
+       <input type="number" name="days" id="days1" placeholder="రోజులు" style="width: 60px" min="0" max="30">
+            <br>
+            <br>
+      <!-- <input type="text" name="months" id="months" placeholder="months" style="width: 200px">
+            <br>
+            <br>-->
+       <input type="text" name="inter" id="inter1" placeholder="వడ్డి ఎంత" style="width: 200px">
+            <br>
+            <br>
+            <label for="interesttype">రూపాయలు లేదా శాతం</label>
+            <br>
+<select id="interesttype1" name="interesttype" style="width: 210px">
+    <option value="R">రూపాయలు</option>
+    <option value="P">శాతం</option>
+</select>
+            <br>
+            <br>
+            <div id="mycode1">
+              <label for="noofyears" >ఏన్ని సంవత్సరాలకి అంత కట్టు</label>
+
+        <select id="noofyears1" name="noofyears" style="width: 210px">
+            <option value=1>1 సంవత్సరాలకి</option>
+            <option value=2>2 సంవత్సరాలు కు</option>
+            <option value=1>3 సంవత్సరాలు కు</option>
+            <option value=2>4 సంవత్సరాలు కు</option>
+            <option value=2>5 సంవత్సరాలు కు</option>
+            <option value=2>6 సంవత్సరాలు కు</option>
+            <option value=2>7 సంవత్సరాలు కు</option>
+            <option value=2>8 సంవత్సరాలు కు</option>
+            <option value=2>9 సంవత్సరాలు కు</option>
+            <option value=2>10 సంవత్సరాలు కు</option>
+        </select>
+                </div>
+
+       <input type="submit" value="లెకించండి" placeholder="లెకించండి" >
+        </form>
+    </div>
 </div>
-	<br>
-	<br>
-    <footer text>
+ <footer text>
       &copy; <em id="date"></em>obula reddy
     </footer>
+
 </body>
 </html>

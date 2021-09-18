@@ -1,5 +1,5 @@
 def simple_interest(p,t,r):
-     si=(p*t*r)/100
+     si=(p*t*r)/(30*100)
      return round(si), round((si+p))
 
 
