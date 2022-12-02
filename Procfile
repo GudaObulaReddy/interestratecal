@@ -1,1 +1,1 @@
-web: gunicorn cal:cal
+web: /cal-web
